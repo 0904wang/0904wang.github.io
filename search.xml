@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>test</title>
+    <url>/2024/05/30/test/</url>
+    <content><![CDATA[<h1>一级标题</h1>
+<p><strong>加粗</strong><br>
+<em>斜体</em></p>
+<blockquote>
+<p>引用</p>
+<blockquote>
+<p>嵌套引用</p>
+</blockquote>
+</blockquote>
+<ol>
+<li>first</li>
+<li>second</li>
+</ol>
+<ul>
+<li>first
+<ul>
+<li>1</li>
+<li>2</li>
+</ul>
+</li>
+<li>second</li>
+</ul>
+<h2 id="二级标题">二级标题</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">code</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    for (int i = 0; i &lt; 5; i++)</span><br><span class="line">        printf(&quot;Hello Grayson~%d\n&quot;, i); </span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>分隔符</p>
+<hr>
+<p>这是一个链接<a href="baidu.com">百度</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">11</th>
+<th style="text-align:center">11</th>
+<th style="text-align:right">11</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">22</td>
+<td style="text-align:center">22</td>
+<td style="text-align:right">22</td>
+</tr>
+<tr>
+<td style="text-align:left">33</td>
+<td style="text-align:center">33</td>
+<td style="text-align:right">33</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <tags>
+        <tag>测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2024/05/23/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start">Quick Start</h2>
+<h3 id="Create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+</search>
