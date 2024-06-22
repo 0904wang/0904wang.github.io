@@ -68,7 +68,6 @@
 <li>使用<code>plot</code>函数绘制时域波形，x轴为时间<code>s</code>，y轴为幅度<code>V</code>。</li>
 </ol>
 <p><img src="clip_image001.gif" alt=""></p>
-<p><img src="clip_image002.gif" alt=""></p>
 <h1 id="绘制频域波形图">绘制频域波形图</h1>
 <ol>
 <li>定义频率向量<code>f</code>，扩展因子<code>a</code>，并初始化一个更大的矩阵<code>y1</code>来扩展<code>y</code>矩阵。</li>
@@ -78,6 +77,7 @@
 <li>使用循环计算每个子载波的频谱，通过对<code>y_combined</code>的每一行应用<code>fft</code>函数，然后使用<code>fftshift</code>函数进行频谱移位，并除以<code>N</code>进行归一化。</li>
 <li>使用<code>plot</code>函数绘制频域波形图，x轴为频率<code>Hz</code>，y轴为幅度<code>V</code>。限制x轴范围在-10到10之间。</li>
 </ol>
+<p><img src="clip_image002.gif" alt=""></p>
 <h1 id="总结">总结</h1>
 <p>生成特定的时间序列和相应的复数值，来模拟和绘制四个子载波的时域波形。然后，通过对这些波形进行傅里叶变换，绘制出它们的频域波形图。</p>
 ]]></content>
