@@ -1,6 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>test</title>
+    <url>/2024/05/30/test/</url>
+    <content><![CDATA[<h1 id="一级标题">一级标题</h1>
+<p><strong>加粗</strong><br>
+<em>斜体</em></p>
+<blockquote>
+<p>引用</p>
+<blockquote>
+<p>嵌套引用</p>
+</blockquote>
+</blockquote>
+<ol>
+<li>first</li>
+<li>second</li>
+</ol>
+<ul>
+<li>first
+<ul>
+<li>1</li>
+<li>2</li>
+</ul>
+</li>
+<li>second</li>
+</ul>
+<h2 id="二级标题">二级标题</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">code</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    for (int i = 0; i &lt; 5; i++)</span><br><span class="line">        printf(&quot;Hello Grayson~%d\n&quot;, i); </span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>分隔符</p>
+<hr>
+<p>这是一个链接<a href="https://www.baidu.com/">百度一下，你就知道 (baidu.com)</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">11</th>
+<th style="text-align:center">11</th>
+<th style="text-align:right">11</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">22</td>
+<td style="text-align:center">22</td>
+<td style="text-align:right">22</td>
+</tr>
+<tr>
+<td style="text-align:left">33</td>
+<td style="text-align:center">33</td>
+<td style="text-align:right">33</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <tags>
+        <tag>测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>OFDM时频图</title>
     <url>/2024/06/22/OFDM%E6%97%B6%E9%A2%91%E5%9B%BE/</url>
     <content><![CDATA[<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">% ======================== 绘制时域波形图=======================</span></span><br><span class="line">Fs = <span class="number">1000</span>;                                <span class="comment">% 总的采样率</span></span><br><span class="line">N = <span class="number">1024</span>;                                <span class="comment">% 总的子载波数</span></span><br><span class="line">T = N / Fs;                              <span class="comment">% 信号绘制为一个周期的长度</span></span><br><span class="line">x = <span class="number">0</span> : <span class="number">1</span>/Fs : T<span class="number">-1</span>/Fs;                   <span class="comment">% 生成时间向量，用于绘制波形</span></span><br><span class="line">Numscr = <span class="number">4</span>;                              <span class="comment">% 绘制的子载波数量</span></span><br><span class="line">s_data = <span class="number">1</span>;                              <span class="comment">% 初始相位</span></span><br><span class="line">y = <span class="built_in">zeros</span>(Numscr, <span class="built_in">numel</span>(x));             <span class="comment">% 初始化存储每个子载波的复数值的矩阵</span></span><br><span class="line">ini_phase = <span class="built_in">repmat</span>(s_data, <span class="number">1</span>, <span class="built_in">numel</span>(x));  <span class="comment">% 生成与时间长度相匹配的初始相位向量</span></span><br><span class="line"><span class="keyword">for</span> k = <span class="number">0</span> : Numscr<span class="number">-1</span>                      <span class="comment">% 循环遍历要绘制的子载波数量</span></span><br><span class="line">    <span class="keyword">for</span> n = <span class="number">0</span> : <span class="built_in">numel</span>(x)<span class="number">-1</span>                <span class="comment">% 循环遍历时间序列</span></span><br><span class="line">        y(k+<span class="number">1</span>, n+<span class="number">1</span>) = ini_phase(n+<span class="number">1</span>) * <span class="built_in">exp</span>(<span class="number">1</span><span class="built_in">i</span> * <span class="number">2</span> * <span class="built_in">pi</span> * k * n / N);  <span class="comment">% 计算每个时间点上每个子载波的复数值</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">figure</span>(<span class="number">1</span>);</span><br><span class="line"><span class="built_in">plot</span>(x, <span class="built_in">real</span>(y));                         <span class="comment">% 绘制时域波形</span></span><br><span class="line">xlabel(<span class="string">&#x27;时间/s&#x27;</span>);                      </span><br><span class="line">ylabel(<span class="string">&#x27;幅度/V&#x27;</span>);                        </span><br><span class="line"></span><br><span class="line"><span class="comment">% ======================== 绘制频域波形图=======================</span></span><br><span class="line">f = (-Fs/<span class="number">2</span> : Fs/<span class="built_in">numel</span>(x) : Fs/<span class="number">2</span>-Fs/<span class="built_in">numel</span>(x));</span><br><span class="line">a = <span class="number">20</span>;</span><br><span class="line">y1 = <span class="built_in">zeros</span>(Numscr, a * N);</span><br><span class="line">y_combined = horzcat(y, y1);              <span class="comment">% 水平拼接两个矩阵</span></span><br><span class="line">f = (-Fs/<span class="number">2</span> : Fs/((a+<span class="number">1</span>)*N) : (Fs/<span class="number">2</span>-Fs/((a+<span class="number">1</span>)*N)));</span><br><span class="line">y_fft = <span class="built_in">zeros</span>(Numscr, (a+<span class="number">1</span>)*N);</span><br><span class="line"><span class="keyword">for</span> k = <span class="number">1</span> : Numscr</span><br><span class="line">    y_fft(k, :) = <span class="built_in">real</span>(fftshift(fft(y_combined(k,:)))) / N;  <span class="comment">% 计算每个子载波的频谱</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">figure</span>(<span class="number">2</span>)</span><br><span class="line"><span class="built_in">plot</span>(f, y_fft(<span class="number">1</span>,:), f, y_fft(<span class="number">2</span>,:), f, y_fft(<span class="number">3</span>,:), f, y_fft(<span class="number">4</span>,:));</span><br><span class="line">grid on;</span><br><span class="line">xlim([<span class="number">-10</span>, <span class="number">10</span>]);                          <span class="comment">% 将 x 轴范围限制在 -10 到 10 之间</span></span><br><span class="line">xlabel(<span class="string">&#x27;频率/Hz&#x27;</span>);</span><br><span class="line">ylabel(<span class="string">&#x27;幅度/V&#x27;</span>);</span><br></pre></td></tr></table></figure>
@@ -818,62 +874,6 @@ c-1 5-5 9-11 9h-2L532 67 19 159h-2c-5 0-9-4-11-9l-5-22c-1-6 2-12 8-13z'/></svg><
 ]]></content>
       <tags>
         <tag>latex</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>test</title>
-    <url>/2024/05/30/test/</url>
-    <content><![CDATA[<h1 id="一级标题">一级标题</h1>
-<p><strong>加粗</strong><br>
-<em>斜体</em></p>
-<blockquote>
-<p>引用</p>
-<blockquote>
-<p>嵌套引用</p>
-</blockquote>
-</blockquote>
-<ol>
-<li>first</li>
-<li>second</li>
-</ol>
-<ul>
-<li>first
-<ul>
-<li>1</li>
-<li>2</li>
-</ul>
-</li>
-<li>second</li>
-</ul>
-<h2 id="二级标题">二级标题</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">code</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    for (int i = 0; i &lt; 5; i++)</span><br><span class="line">        printf(&quot;Hello Grayson~%d\n&quot;, i); </span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>分隔符</p>
-<hr>
-<p>这是一个链接<a href="https://www.baidu.com/">百度一下，你就知道 (baidu.com)</a></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">11</th>
-<th style="text-align:center">11</th>
-<th style="text-align:right">11</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">22</td>
-<td style="text-align:center">22</td>
-<td style="text-align:right">22</td>
-</tr>
-<tr>
-<td style="text-align:left">33</td>
-<td style="text-align:center">33</td>
-<td style="text-align:right">33</td>
-</tr>
-</tbody>
-</table>
-]]></content>
-      <tags>
-        <tag>测试</tag>
       </tags>
   </entry>
 </search>
