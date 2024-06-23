@@ -9,8 +9,35 @@
     <atom:link href="http://wangzhilei.fun/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>看到我请叫我去学习</description>
-    <pubDate>Sat, 22 Jun 2024 03:21:42 GMT</pubDate>
+    <pubDate>Sun, 23 Jun 2024 05:06:26 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Python爬虫（一）</title>
+      <link>http://wangzhilei.fun/2024/06/23/Python%E7%88%AC%E8%99%AB%EF%BC%88%E4%B8%80%EF%BC%89/</link>
+      <guid>http://wangzhilei.fun/2024/06/23/Python%E7%88%AC%E8%99%AB%EF%BC%88%E4%B8%80%EF%BC%89/</guid>
+      <pubDate>Sun, 23 Jun 2024 04:55:07 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;笔者在大一时曾系统学习过python，但也只掌握了一些基础的语法知识，并没有真正的深入了解python。这次想尝试一下python中一个很重要的部分——爬虫。&lt;/p&gt;
+&lt;h1 id=&quot;测试库&quot;&gt;测试库&lt;/h1&gt;
+&lt;p&gt;先测试一下需要安装的库&lt;/p&gt;
+&lt;figure clas</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>笔者在大一时曾系统学习过python，但也只掌握了一些基础的语法知识，并没有真正的深入了解python。这次想尝试一下python中一个很重要的部分——爬虫。</p><h1 id="测试库">测试库</h1><p>先测试一下需要安装的库</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> selenium</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;ok&quot;</span>)</span><br></pre></td></tr></table></figure>]]></content:encoded>
+      
+      
+      
+      <category domain="http://wangzhilei.fun/tags/Python%E7%88%AC%E8%99%AB/">Python爬虫</category>
+      
+      
+      <comments>http://wangzhilei.fun/2024/06/23/Python%E7%88%AC%E8%99%AB%EF%BC%88%E4%B8%80%EF%BC%89/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>OFDM时频图</title>
