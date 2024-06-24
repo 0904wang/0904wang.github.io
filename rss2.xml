@@ -9,8 +9,35 @@
     <atom:link href="http://wangzhilei.fun/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>看到我请叫我去学习</description>
-    <pubDate>Mon, 24 Jun 2024 13:03:22 GMT</pubDate>
+    <pubDate>Mon, 24 Jun 2024 16:24:55 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Python爬虫（二）</title>
+      <link>http://wangzhilei.fun/2024/06/25/Python%E7%88%AC%E8%99%AB%EF%BC%88%E4%BA%8C%EF%BC%89/</link>
+      <guid>http://wangzhilei.fun/2024/06/25/Python%E7%88%AC%E8%99%AB%EF%BC%88%E4%BA%8C%EF%BC%89/</guid>
+      <pubDate>Mon, 24 Jun 2024 16:16:44 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;再次尝试爬取自己的博客&quot;&gt;再次尝试爬取自己的博客&lt;/h1&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;sp</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="再次尝试爬取自己的博客">再次尝试爬取自己的博客</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> unquote</span><br><span class="line"></span><br><span class="line">url = <span class="string">&quot;http://www.wangzhilei.fun&quot;</span></span><br><span class="line"></span><br><span class="line">r=requests.get(url)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> r.status_code != <span class="number">200</span>:</span><br><span class="line">    <span class="keyword">raise</span> Exception()</span><br><span class="line">r.encoding =<span class="string">&#x27;utf-8&#x27;</span></span><br><span class="line">html_doc=r.text</span><br><span class="line">soup = BeautifulSoup(html_doc,<span class="string">&quot;html.parser&quot;</span>)</span><br><span class="line">div_nodes = soup.find_all(<span class="string">&quot;div&quot;</span>,class_ = <span class="string">&quot;recent-post-info&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> div_node <span class="keyword">in</span> div_nodes:</span><br><span class="line">    link = div_node.find(<span class="string">&quot;a&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(unquote(link[<span class="string">&quot;href&quot;</span>]),link.get_text())<span class="comment"># urllib.parse.unquote()函数解码</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;================================&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><p><img src="1.png" alt=""></p><p>爬取成功！！！</p>]]></content:encoded>
+      
+      
+      <category domain="http://wangzhilei.fun/categories/Python/">Python</category>
+      
+      
+      <category domain="http://wangzhilei.fun/tags/Python%E7%88%AC%E8%99%AB/">Python爬虫</category>
+      
+      
+      <comments>http://wangzhilei.fun/2024/06/25/Python%E7%88%AC%E8%99%AB%EF%BC%88%E4%BA%8C%EF%BC%89/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Python爬虫（一）</title>

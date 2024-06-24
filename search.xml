@@ -57,6 +57,21 @@
       </tags>
   </entry>
   <entry>
+    <title>Python爬虫（二）</title>
+    <url>/2024/06/25/Python%E7%88%AC%E8%99%AB%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="再次尝试爬取自己的博客">再次尝试爬取自己的博客</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> unquote</span><br><span class="line"></span><br><span class="line">url = <span class="string">&quot;http://www.wangzhilei.fun&quot;</span></span><br><span class="line"></span><br><span class="line">r=requests.get(url)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> r.status_code != <span class="number">200</span>:</span><br><span class="line">    <span class="keyword">raise</span> Exception()</span><br><span class="line">r.encoding =<span class="string">&#x27;utf-8&#x27;</span></span><br><span class="line">html_doc=r.text</span><br><span class="line">soup = BeautifulSoup(html_doc,<span class="string">&quot;html.parser&quot;</span>)</span><br><span class="line">div_nodes = soup.find_all(<span class="string">&quot;div&quot;</span>,class_ = <span class="string">&quot;recent-post-info&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> div_node <span class="keyword">in</span> div_nodes:</span><br><span class="line">    link = div_node.find(<span class="string">&quot;a&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(unquote(link[<span class="string">&quot;href&quot;</span>]),link.get_text())<span class="comment"># urllib.parse.unquote()函数解码</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;================================&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="1.png" alt=""></p>
+<p>爬取成功！！！</p>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python爬虫（一）</title>
     <url>/2024/06/23/Python%E7%88%AC%E8%99%AB%EF%BC%88%E4%B8%80%EF%BC%89/</url>
     <content><![CDATA[<p>笔者在大一时曾系统学习过python，但也只掌握了一些基础的语法知识，并没有真正的深入了解python。这次想尝试一下python中一个很重要的部分——爬虫。</p>
