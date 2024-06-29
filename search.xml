@@ -57,6 +57,52 @@
       </tags>
   </entry>
   <entry>
+    <title>每日一题1.1-读《Python Codebook》</title>
+    <url>/2024/06/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%981-1-%E8%AF%BB%E3%80%8APython-Codebook%E3%80%8B/</url>
+    <content><![CDATA[<h1 id="1-1-将序列分解为单独的变量">1.1 将序列分解为单独的变量</h1>
+<p>简单的赋值操作。</p>
+<h1 id="1-2从任意长度的可迭代对象中分解元素">1.2从任意长度的可迭代对象中分解元素</h1>
+<p>“*表达式”得到列表。</p>
+<h1 id="1-3保存最后n个元素">1.3保存最后N个元素</h1>
+<h2 id="collection-deque方法">collection.deque方法</h2>
+<blockquote>
+<p><code>collections.deque</code>是Python标准库<code>collections</code>模块中的一个类，提供了一个双端队列。双端队列（deque，全称double-ended queue）是一种具有队列和栈性质的抽象数据类型。它允许你从两端附加和弹出元素，因此提供了一种灵活的数据存储方式。</p>
+</blockquote>
+<p><code>collections.deque</code>的主要特点和用法包括：</p>
+<ol>
+<li><strong>快速添加和弹出</strong>：与列表相比，<code>deque</code>在两端添加（append）和弹出（pop）操作的时间复杂度都是O(1)，而列表在头部添加和弹出的时间复杂度是O(n)。</li>
+<li><strong>线程安全</strong>：<code>deque</code>是线程安全的，可以在多线程环境中使用，而无需额外的锁定机制。</li>
+<li><strong>支持最大长度</strong>：可以限制<code>deque</code>的大小。当限定的大小被超出时，添加新元素会导致对应端的旧元素被移除。</li>
+<li><strong>支持迭代</strong>：<code>deque</code>支持迭代，可以像列表一样进行循环遍历。</li>
+<li><strong>支持索引访问</strong>：虽然<code>deque</code>支持从两端快速添加和弹出元素，但也支持索引访问。不过，索引访问的时间复杂度是O(n)，因此在大量数据的情况下不推荐使用。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个空的双端队列</span></span><br><span class="line">d = deque()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在右侧添加元素</span></span><br><span class="line">d.append(<span class="number">1</span>)</span><br><span class="line">d.append(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在左侧添加元素</span></span><br><span class="line">d.appendleft(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 弹出右侧元素</span></span><br><span class="line">right_elem = d.pop()  <span class="comment"># 返回2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 弹出左侧元素</span></span><br><span class="line">left_elem = d.popleft()  <span class="comment"># 返回0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定最大长度创建deque</span></span><br><span class="line">limited_d = deque(maxlen=<span class="number">2</span>)</span><br><span class="line">limited_d.append(<span class="number">1</span>)</span><br><span class="line">limited_d.append(<span class="number">2</span>)</span><br><span class="line">limited_d.append(<span class="number">3</span>)  <span class="comment"># 添加3的同时，1会从左侧被移除</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(d)  <span class="comment"># 输出当前deque的内容</span></span><br><span class="line"><span class="built_in">print</span>(limited_d)  <span class="comment"># 输出限定长度的deque内容</span></span><br></pre></td></tr></table></figure>
+<h2 id="yield关键字">yield关键字</h2>
+<blockquote>
+<p>在Python中，<code>yield</code>是一个关键字，用于从一个函数返回一个生成器（generator）。使用<code>yield</code>的函数被称为生成器函数。生成器提供了一种方式来产生数据序列，但与返回列表不同，生成器一次只产生一个值，这样可以减少内存使用，提高效率，特别是在处理大数据集时。</p>
+</blockquote>
+<p>使用<code>yield</code>的函数在执行时，每遇到一个<code>yield</code>语句就会暂停并保存当前所有的运行信息，返回<code>yield</code>的值，并在下一次执行<code>next()</code>方法时从当前位置继续运行。<br>
+以下是<code>yield</code>的一些主要特点：</p>
+<ol>
+<li><strong>惰性求值</strong>：生成器只有在需要产生下一个数据时才会执行。</li>
+<li><strong>状态保持</strong>：生成器函数在暂停执行时，会保持其状态，包括局部变量和指针信息，等待下一次从上次离开的地方继续执行。</li>
+<li><strong>内存效率</strong>：由于一次只处理一个数据项，生成器不需要像列表那样存储整个数据集，这对于大数据处理非常有用。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">simple_generator</span>():</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">yield</span> <span class="number">2</span></span><br><span class="line">    <span class="keyword">yield</span> <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个生成器对象</span></span><br><span class="line">gen = simple_generator()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用next()获取生成器的下一个元素</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">next</span>(gen))  <span class="comment"># 输出 1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">next</span>(gen))  <span class="comment"># 输出 2</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">next</span>(gen))  <span class="comment"># 输出 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 再次调用next(gen)将会抛出StopIteration异常，因为生成器没有更多的元素</span></span><br></pre></td></tr></table></figure>
+<p>生成器非常适合于遍历大文件、表示无限序列和处理流式数据等场景。使用<code>yield</code>可以使代码更加清晰，更易于理解，同时提高程序的性能。</p>
+<h1 id="1-4-找到最小或最大的元素">1.4 找到最小或最大的元素</h1>
+<p>heapq模块的nlargest()和nsmallest()方法。这两个函数都可以接受一个参数key。</p>
+<h1 id="1-5-实现优先级队列">1.5 实现优先级队列</h1>
+<p>利用heapq模块，引入index生成一个堆，依此弹出即可。</p>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python Codebook</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python爬虫（三）</title>
     <url>/2024/06/28/Python%E7%88%AC%E8%99%AB%EF%BC%88%E4%B8%89%EF%BC%89/</url>
     <content><![CDATA[<p>主要是实战部分</p>
