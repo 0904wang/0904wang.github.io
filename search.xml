@@ -57,6 +57,35 @@
       </tags>
   </entry>
   <entry>
+    <title>每日一题1-3-读《Python-Codebook》</title>
+    <url>/2024/07/01/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%981-3-%E8%AF%BB%E3%80%8APython-Codebook%E3%80%8B/</url>
+    <content><![CDATA[<h1 id="1-11-对切片命名">1.11 对切片命名</h1>
+<p>内置的slice()函数可以创建一个切片对象。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">items = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="built_in">print</span>(items[<span class="number">1</span>:<span class="number">3</span>])</span><br><span class="line"><span class="built_in">print</span>(items[<span class="built_in">slice</span>(<span class="number">1</span>,<span class="number">3</span>)])</span><br></pre></td></tr></table></figure>
+<p>两者的输出相同。</p>
+<h2 id="1-12-找出序列中出现次数最多的元素">1.12 找出序列中出现次数最多的元素</h2>
+<p>collections模块中的Counter类正是为此类问题设计的。</p>
+<blockquote>
+<p><code>Counter</code> 是 Python <code>collections</code> 模块中的一个类，用于计数可哈希对象。它是字典的一个子类，其中元素作为键，它们的计数作为值。<code>Counter</code> 可以用来计算值出现的次数。</p>
+</blockquote>
+<p><code>Counter</code> 类的一些主要特性和用法包括：</p>
+<ul>
+<li><strong>计数元素</strong>：可以从一个可迭代对象或映射对象初始化 <code>Counter</code> 对象，计算各元素出现的次数。</li>
+<li><strong>元素方法</strong>：<code>elements()</code> 方法返回一个迭代器，包含每个元素重复出现次数的所有元素。</li>
+<li><strong>最常见元素</strong>：<code>most_common([n])</code> 方法返回一个列表，包含 n 个最常见元素及其计数，按计数降序排列。</li>
+<li><strong>更新计数</strong>：可以使用 <code>update()</code> 方法从另一个可迭代对象或映射对象添加计数。</li>
+<li><strong>数学运算</strong>：<code>Counter</code> 支持各种数学运算，如加法、减法、交集和并集。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个 Counter 对象</span></span><br><span class="line">cnt = Counter([<span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;blue&#x27;</span>, <span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;blue&#x27;</span>, <span class="string">&#x27;blue&#x27;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印元素计数</span></span><br><span class="line"><span class="built_in">print</span>(cnt)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出最常见的元素</span></span><br><span class="line"><span class="built_in">print</span>(cnt.most_common(<span class="number">2</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新计数</span></span><br><span class="line">cnt.update([<span class="string">&#x27;blue&#x27;</span>, <span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;green&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(cnt)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例输出:</span></span><br><span class="line"><span class="comment"># Counter(&#123;&#x27;blue&#x27;: 3, &#x27;red&#x27;: 2, &#x27;green&#x27;: 1&#125;)</span></span><br><span class="line"><span class="comment"># [(&#x27;blue&#x27;, 3), (&#x27;red&#x27;, 2)]</span></span><br><span class="line"><span class="comment"># Counter(&#123;&#x27;blue&#x27;: 4, &#x27;red&#x27;: 3, &#x27;green&#x27;: 2&#125;)</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python Codebook</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>每日一题1-2-读《Python-Codebook》</title>
     <url>/2024/06/30/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%981-2-%E8%AF%BB%E3%80%8APython-Codebook%E3%80%8B/</url>
     <content><![CDATA[<h1 id="1-6在字典中将键映射到多个值">1.6在字典中将键映射到多个值</h1>
