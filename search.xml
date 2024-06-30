@@ -57,6 +57,39 @@
       </tags>
   </entry>
   <entry>
+    <title>每日一题1-2-读《Python-Codebook》</title>
+    <url>/2024/06/30/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%981-2-%E8%AF%BB%E3%80%8APython-Codebook%E3%80%8B/</url>
+    <content><![CDATA[<h1 id="1-6在字典中将键映射到多个值">1.6在字典中将键映射到多个值</h1>
+<p>将这多个值保存在另一个容器如列表或集合中。<br>
+使用collections模块中的defaultdict类。</p>
+<blockquote>
+<p>collections模块中的defaultdict类是Python标准库中的一个字典（dict）子类，它提供了所有常规字典的方法。defaultdict的主要特点是在访问不存在的键时，会自动创建该键并将其值设置为一个默认值，这个默认值是通过在创建defaultdict对象时传递给构造器的可调用对象（如函数）返回的。</p>
+</blockquote>
+<p>以下是defaultdict的一些主要特性：</p>
+<ul>
+<li>自动创建不存在的键：当尝试访问一个不存在的键时，defaultdict会自动创建这个键并将其值设置为由默认工厂函数返回的值。</li>
+<li>可指定默认值的类型：可以指定默认值的类型，如list、int、set等，这使得defaultdict非常适合于收集和组织数据。</li>
+<li>简化代码：使用defaultdict可以避免在字典操作中频繁检查键是否存在的代码，使得代码更简洁易读。</li>
+</ul>
+<h1 id="1-7让字典保持有序">1.7让字典保持有序</h1>
+<p>collections模块中的OrderedDict类。当对字典做迭代时，他会严格按照元素初始添加顺序进行。<br>
+注意：OrderedDict的大小是普通字典的2倍多。</p>
+<h1 id="1-8与字典有关的计算问题">1.8与字典有关的计算问题</h1>
+<p>利用zip()将字典中的键和值反转。</p>
+<h1 id="1-9在两个字典中寻找共同点">1.9在两个字典中寻找共同点</h1>
+<p>通过keys()或items()方法执行常见的集合操作。</p>
+<h1 id="1-10从序列中移除重复项并保持元素间顺序不变">1.10从序列中移除重复项并保持元素间顺序不变</h1>
+<p>通过集合和生成器解决。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">dedupe</span>(<span class="params">items</span>):</span><br><span class="line">    seen = <span class="built_in">set</span>()</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> items:</span><br><span class="line">        <span class="keyword">if</span> item <span class="keyword">not</span> <span class="keyword">in</span> seen:</span><br><span class="line">            <span class="keyword">yield</span> item</span><br><span class="line">            seen.add(item)</span><br><span class="line"></span><br><span class="line">a = [<span class="number">1</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">9</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">10</span>]  </span><br><span class="line"><span class="built_in">list</span>(dedupe(a))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python Codebook</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>每日一题1.1-读《Python Codebook》</title>
     <url>/2024/06/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%981-1-%E8%AF%BB%E3%80%8APython-Codebook%E3%80%8B/</url>
     <content><![CDATA[<h1 id="1-1-将序列分解为单独的变量">1.1 将序列分解为单独的变量</h1>
