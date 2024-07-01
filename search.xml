@@ -319,7 +319,7 @@ Beautiful Soup已成为和lxml、html6lib一样出色的python解释器，为用
 <li>使用双重循环计算每个子载波在每个时间点的复数值。外循环遍历子载波数量，内循环遍历时间序列。计算公式为<code>y(k+1, n+1) = ini_phase(n+1) * exp(1i * 2 * pi * k * n / N)</code>。</li>
 <li>使用<code>plot</code>函数绘制时域波形，x轴为时间<code>s</code>，y轴为幅度<code>V</code>。</li>
 </ol>
-<p><img src="clip_image001.gif" alt=""></p>
+<p><img src="https://s3.bmp.ovh/imgs/2024/07/01/fb39953ac4738f2a.gif" alt=""></p>
 <h1 id="绘制频域波形图">绘制频域波形图</h1>
 <ol>
 <li>定义频率向量<code>f</code>，扩展因子<code>a</code>，并初始化一个更大的矩阵<code>y1</code>来扩展<code>y</code>矩阵。</li>
@@ -329,7 +329,7 @@ Beautiful Soup已成为和lxml、html6lib一样出色的python解释器，为用
 <li>使用循环计算每个子载波的频谱，通过对<code>y_combined</code>的每一行应用<code>fft</code>函数，然后使用<code>fftshift</code>函数进行频谱移位，并除以<code>N</code>进行归一化。</li>
 <li>使用<code>plot</code>函数绘制频域波形图，x轴为频率<code>Hz</code>，y轴为幅度<code>V</code>。限制x轴范围在-10到10之间。</li>
 </ol>
-<p><img src="clip_image002.gif" alt=""></p>
+<p><img src="https://s3.bmp.ovh/imgs/2024/07/01/42575f8c0c3ef9e5.gif" alt=""></p>
 <h1 id="总结">总结</h1>
 <p>生成特定的时间序列和相应的复数值，来模拟和绘制四个子载波的时域波形。然后，通过对这些波形进行傅里叶变换，绘制出它们的频域波形图。</p>
 ]]></content>
@@ -726,8 +726,8 @@ Beautiful Soup已成为和lxml、html6lib一样出色的python解释器，为用
 </ul>
 <hr>
 <h1 id="实验结果">实验结果</h1>
-<p><img src="clip_image001.gif" alt=""></p>
-<p><img src="clip_image002.gif" alt=""></p>
+<p><img src="https://s3.bmp.ovh/imgs/2024/07/01/fd5bc1a2f352b13b.gif" alt=""></p>
+<p><img src="https://s3.bmp.ovh/imgs/2024/07/01/aba8564ed891c6e5.gif" alt=""></p>
 <h1 id="使用的技术">使用的技术</h1>
 <p><strong>保护间隔</strong><br>
 多径信道会对OFDM符号造成ISI影响，破坏了子载波间的正交性。故需要采取一些方法来消除多径信道带来的符号间干扰（ISI）影响，即插入保护间隔。插入循环前缀实现OFDM的循环扩展。<br>
