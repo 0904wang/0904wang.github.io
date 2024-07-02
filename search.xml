@@ -57,6 +57,26 @@
       </tags>
   </entry>
   <entry>
+    <title>每日一题1-4-读《Python-Codebook》</title>
+    <url>/2024/07/02/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%981-4-%E8%AF%BB%E3%80%8APython-Codebook%E3%80%8B/</url>
+    <content><![CDATA[<h1 id="1-16-筛选序列中的元素">1.16 筛选序列中的元素</h1>
+<h2 id="列表推导式">列表推导式</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">mylist = [<span class="number">1</span>,<span class="number">4</span>,-<span class="number">5</span>,<span class="number">10</span>,-<span class="number">7</span>,<span class="number">2</span>,<span class="number">3</span>,-<span class="number">1</span>]</span><br><span class="line">[n <span class="keyword">for</span> n <span class="keyword">in</span> mylist <span class="keyword">if</span> n &gt; <span class="number">0</span>]</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">输出：[1, 4, 10, 2, 3]</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>但缺点是如果原始数据非常大，这么做会产生一个庞大的结果。可以考虑使用生成器通过迭代的方法筛选结果。</p>
+<h1 id="生成器">生成器</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pos = (n <span class="keyword">for</span> n <span class="keyword">in</span> mylist <span class="keyword">if</span> n &gt; <span class="number">0</span>)</span><br><span class="line"><span class="built_in">print</span>(pos)</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> pos:</span><br><span class="line">    <span class="built_in">print</span>(x,end=<span class="string">&quot; &quot;</span>)</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">输出：&lt;generator object &lt;genexpr&gt; at 0x0000020FDCAD2B90&gt;</span></span><br><span class="line"><span class="string">1 4 10 2 3</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+<h1 id="1-17-从字典中提取子集">1.17 从字典中提取子集</h1>
+<p>使用字典推导式。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">prices = &#123;</span><br><span class="line">    <span class="string">&#x27;ACME&#x27;</span>: <span class="number">45.23</span>,</span><br><span class="line">    <span class="string">&#x27;AAPL&#x27;</span>: <span class="number">612.78</span>,</span><br><span class="line">    <span class="string">&#x27;IBM&#x27;</span>: <span class="number">205.55</span>,</span><br><span class="line">    <span class="string">&#x27;HPQ&#x27;</span>: <span class="number">37.20</span>,</span><br><span class="line">    <span class="string">&#x27;FB&#x27;</span>: <span class="number">10.75</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">p1 = &#123;key:value <span class="keyword">for</span> key,value <span class="keyword">in</span> prices.items() <span class="keyword">if</span> value &gt; <span class="number">200</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(p1)</span><br><span class="line">tech_names = &#123;<span class="string">&#x27;AAPL&#x27;</span>, <span class="string">&#x27;IBM&#x27;</span>, <span class="string">&#x27;HPQ&#x27;</span>, <span class="string">&#x27;MSFT&#x27;</span>&#125;</span><br><span class="line">p2 = &#123;key:value <span class="keyword">for</span> key,value <span class="keyword">in</span> prices.items() <span class="keyword">if</span> key <span class="keyword">in</span> tech_names&#125;</span><br><span class="line"><span class="built_in">print</span>(p2)</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">输出：&#123;&#x27;AAPL&#x27;: 612.78, &#x27;IBM&#x27;: 205.55&#125; </span></span><br><span class="line"><span class="string">&#123;&#x27;AAPL&#x27;: 612.78, &#x27;IBM&#x27;: 205.55, &#x27;HPQ&#x27;: 37.2&#125;</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python Codebook</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>每日一题1-3-读《Python-Codebook》</title>
     <url>/2024/07/01/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%981-3-%E8%AF%BB%E3%80%8APython-Codebook%E3%80%8B/</url>
     <content><![CDATA[<h1 id="1-11-对切片命名">1.11 对切片命名</h1>

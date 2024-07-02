@@ -9,8 +9,36 @@
     <atom:link href="http://wangzhilei.fun/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>看到我请叫我去学习</description>
-    <pubDate>Sun, 30 Jun 2024 23:55:38 GMT</pubDate>
+    <pubDate>Tue, 02 Jul 2024 13:52:54 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>每日一题1-4-读《Python-Codebook》</title>
+      <link>http://wangzhilei.fun/2024/07/02/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%981-4-%E8%AF%BB%E3%80%8APython-Codebook%E3%80%8B/</link>
+      <guid>http://wangzhilei.fun/2024/07/02/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%981-4-%E8%AF%BB%E3%80%8APython-Codebook%E3%80%8B/</guid>
+      <pubDate>Tue, 02 Jul 2024 13:52:09 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;1-16-筛选序列中的元素&quot;&gt;1.16 筛选序列中的元素&lt;/h1&gt;
+&lt;h2 id=&quot;列表推导式&quot;&gt;列表推导式&lt;/h2&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;spa</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="1-16-筛选序列中的元素">1.16 筛选序列中的元素</h1><h2 id="列表推导式">列表推导式</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mylist = [<span class="number">1</span>,<span class="number">4</span>,-<span class="number">5</span>,<span class="number">10</span>,-<span class="number">7</span>,<span class="number">2</span>,<span class="number">3</span>,-<span class="number">1</span>]</span><br><span class="line">[n <span class="keyword">for</span> n <span class="keyword">in</span> mylist <span class="keyword">if</span> n &gt; <span class="number">0</span>]</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">输出：[1, 4, 10, 2, 3]</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure><p>但缺点是如果原始数据非常大，这么做会产生一个庞大的结果。可以考虑使用生成器通过迭代的方法筛选结果。</p><h1 id="生成器">生成器</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">pos = (n <span class="keyword">for</span> n <span class="keyword">in</span> mylist <span class="keyword">if</span> n &gt; <span class="number">0</span>)</span><br><span class="line"><span class="built_in">print</span>(pos)</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> pos:</span><br><span class="line">    <span class="built_in">print</span>(x,end=<span class="string">&quot; &quot;</span>)</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">输出：&lt;generator object &lt;genexpr&gt; at 0x0000020FDCAD2B90&gt;</span></span><br><span class="line"><span class="string">1 4 10 2 3</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure><h1 id="1-17-从字典中提取子集">1.17 从字典中提取子集</h1><p>使用字典推导式。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">prices = &#123;</span><br><span class="line">    <span class="string">&#x27;ACME&#x27;</span>: <span class="number">45.23</span>,</span><br><span class="line">    <span class="string">&#x27;AAPL&#x27;</span>: <span class="number">612.78</span>,</span><br><span class="line">    <span class="string">&#x27;IBM&#x27;</span>: <span class="number">205.55</span>,</span><br><span class="line">    <span class="string">&#x27;HPQ&#x27;</span>: <span class="number">37.20</span>,</span><br><span class="line">    <span class="string">&#x27;FB&#x27;</span>: <span class="number">10.75</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">p1 = &#123;key:value <span class="keyword">for</span> key,value <span class="keyword">in</span> prices.items() <span class="keyword">if</span> value &gt; <span class="number">200</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(p1)</span><br><span class="line">tech_names = &#123;<span class="string">&#x27;AAPL&#x27;</span>, <span class="string">&#x27;IBM&#x27;</span>, <span class="string">&#x27;HPQ&#x27;</span>, <span class="string">&#x27;MSFT&#x27;</span>&#125;</span><br><span class="line">p2 = &#123;key:value <span class="keyword">for</span> key,value <span class="keyword">in</span> prices.items() <span class="keyword">if</span> key <span class="keyword">in</span> tech_names&#125;</span><br><span class="line"><span class="built_in">print</span>(p2)</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">输出：&#123;&#x27;AAPL&#x27;: 612.78, &#x27;IBM&#x27;: 205.55&#125; </span></span><br><span class="line"><span class="string">&#123;&#x27;AAPL&#x27;: 612.78, &#x27;IBM&#x27;: 205.55, &#x27;HPQ&#x27;: 37.2&#125;</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>]]></content:encoded>
+      
+      
+      <category domain="http://wangzhilei.fun/categories/Python/">Python</category>
+      
+      
+      <category domain="http://wangzhilei.fun/tags/Python-Codebook/">Python Codebook</category>
+      
+      
+      <comments>http://wangzhilei.fun/2024/07/02/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%981-4-%E8%AF%BB%E3%80%8APython-Codebook%E3%80%8B/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>每日一题1-3-读《Python-Codebook》</title>
@@ -263,38 +291,6 @@
       
       
       <comments>http://wangzhilei.fun/2024/06/21/latex%E5%85%AC%E5%BC%8F/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>test</title>
-      <link>http://wangzhilei.fun/2024/05/30/test/</link>
-      <guid>http://wangzhilei.fun/2024/05/30/test/</guid>
-      <pubDate>Thu, 30 May 2024 05:12:18 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;一级标题&quot;&gt;一级标题&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;加粗&lt;/strong&gt;&lt;br&gt;
-&lt;em&gt;斜体&lt;/em&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;引用&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;嵌套引用&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/blockquot</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="一级标题">一级标题</h1><p><strong>加粗</strong><br><em>斜体</em></p><blockquote><p>引用</p><blockquote><p>嵌套引用</p></blockquote></blockquote><ol><li>first</li><li>second</li></ol><ul><li>first<ul><li>1</li><li>2</li></ul></li><li>second</li></ul><h2 id="二级标题">二级标题</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">code</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    for (int i = 0; i &lt; 5; i++)</span><br><span class="line">        printf(&quot;Hello Grayson~%d\n&quot;, i); </span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>分隔符</p><hr><p>这是一个链接<a href="https://www.baidu.com/">百度一下，你就知道 (baidu.com)</a></p><table><thead><tr><th style="text-align:left">11</th><th style="text-align:center">11</th><th style="text-align:right">11</th></tr></thead><tbody><tr><td style="text-align:left">22</td><td style="text-align:center">22</td><td style="text-align:right">22</td></tr><tr><td style="text-align:left">33</td><td style="text-align:center">33</td><td style="text-align:right">33</td></tr></tbody></table>]]></content:encoded>
-      
-      
-      
-      <category domain="http://wangzhilei.fun/tags/%E6%B5%8B%E8%AF%95/">测试</category>
-      
-      
-      <comments>http://wangzhilei.fun/2024/05/30/test/#disqus_thread</comments>
       
     </item>
     
