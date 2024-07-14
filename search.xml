@@ -57,6 +57,37 @@
       </tags>
   </entry>
   <entry>
+    <title>Python数据结构--丰富的序列</title>
+    <url>/2024/07/14/Python%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%B8%B0%E5%AF%8C%E7%9A%84%E5%BA%8F%E5%88%97/</url>
+    <content><![CDATA[<p>本节主要内容：</p>
+<ul>
+<li>列表推导式和生成器表达式</li>
+<li>元组的两种用法——记录和不可变列表</li>
+<li>序列拆包和序列模式</li>
+<li>读写切片</li>
+<li>专门的序列类型，例如数组和队列</li>
+</ul>
+<h1 id="1-1-内置序列类型概览">1.1 内置序列类型概览</h1>
+<p>可简单分为：</p>
+<ul>
+<li>容器序列：可存放不同类型的项，其中包括嵌套容器。例如：list、tuple和collections.deque。</li>
+<li>扁平序列：可存放一种简单类型的项。例如：str、bytes和array.array。<br>
+另外，还可按可变性对序列分类。</li>
+<li>可变序列：例如list、bytearray、array.array和collections.deque。</li>
+<li>不可变序列：例如tuple、str和bytes。</li>
+</ul>
+<h1 id="1-2列表推导式和生成器推导式">1.2列表推导式和生成器推导式</h1>
+<h2 id="1-2-1可读性">1.2.1可读性</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>流畅的Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python数据结构--数据结构模型</title>
     <url>/2024/07/06/Python%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84--%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A8%A1%E5%9E%8B/</url>
     <content><![CDATA[<h1 id="python风格的纸牌">python风格的纸牌</h1>
